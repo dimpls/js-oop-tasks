@@ -36,6 +36,29 @@ class Point3D extends Point {
  * Со звездочкой: написать тесты методы класса (oop.spec.js)
  */
 class Queue {
+    constructor(initArr = []) {
+        this.array = [];
+        this.size = initArr.length;
+        if(this.size !== 0){
+            for(let i = 0; i < this.size; ++i){
+                this.array[i] = initArr[i];
+            }
+        }
+    }
+
+    push(value){
+        this.array[this.size] = value;
+        this.size += 1;
+    }
+
+    pop(){
+        if(this.size > 0) {
+            let tmp = this.array[0]
+            this.array = this.array.slice(1, this.size)
+            this.size -= 1;
+            return tmp;
+        }
+    }
 
 }
 
@@ -45,7 +68,25 @@ module.exports = {
     Queue,
 };
 
-let point1 = new Point3D(1, 2, -3);
-let point2 = new Point3D(1, -1, 1);
-
-console.log(Point3D.vectorLength(point1, point2));
+//let o = new Queue([1,2,3,4]);
+//console.log(o)
+//o.push(5);
+//console.log(o)
+//o.pop();
+//console.log(o)
+//o.pop();
+//console.log(o)
+//o.push(7);
+//console.log(o)
+//o.pop()
+//o.pop()
+//console.log(o)
+//o.pop()
+//o.pop()
+//o.pop()
+//console.log(o)
+//o.pop()
+//console.log(o)
+//o.pop()
+//o.pop()
+//console.log(o)
