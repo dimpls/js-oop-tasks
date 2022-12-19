@@ -1,7 +1,6 @@
 const assert = require('assert');
 const core = require('./oop');
 const {Point3D} = require("./oop");
-const {json} = require("mocha/lib/reporters");
 
 describe('ООП', () => {
     describe('#Point', () => {
@@ -59,7 +58,7 @@ describe('ООП', () => {
     describe('#Queue', () => {
         it('проверка иницилизации, когда без параметров', () => {
             const queue = new core.Queue();
-            assert.strictEqual(queue.size, 0);
+            assert.strictEqual(!!queue, true);
         });
 
         it('проверка иницилизации, когда параметр - массив', () => {

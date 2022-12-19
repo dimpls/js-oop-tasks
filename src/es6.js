@@ -9,7 +9,6 @@ function fioToName(fio = "Иванов Иван Иваныч") {
     const name = fio.split(" ")
     return name[1] + " " + name[0]
 }
-//console.log(fioToName("Сорока Александр Александрович"))
 
 // преобразуйте массив чисел так, чтобы в нем остались только
 // уникальные элементы
@@ -18,8 +17,6 @@ function filterUnique(array) {
     let newSet = new Set(array)
     return Array.from(newSet)
 }
-
-//console.log(filterUnique([1, 2, 3, 1, 2, 4, 5, 4, 5, 6]))
 
 // Задача: разница зарплат
 // в функцию приходит массив из n зарплат сотрудников фирмы
@@ -44,7 +41,6 @@ function calculateSalaryDifference(array) {
     }
 
 }
-//console.log(calculateSalaryDifference([2, 5]))
 
 // Реализуйте класс "словарь слов" (как толковый словарь)
 // класс должен быть безопасным и работать только со словами
@@ -58,9 +54,6 @@ class Dictionary {
     get(def){
         if(typeof def === 'string')
             return this.map.get(def)
-        else
-            return false
-
     }
     set(def, desc){
         if(typeof def === 'string' && typeof desc === 'string')
@@ -70,12 +63,7 @@ class Dictionary {
     }
     remove(def){
         if(typeof def === 'string')
-            if(this.map.has(def)) {
-                this.map.delete(def)
-                return true
-            }
-            else
-                return false // Такого слова нет в словаре
+            return this.map.delete(def)
         else
             return false // Неверный тип данных
     }
@@ -94,18 +82,7 @@ class Dictionary {
     }
 
 }
-//let dct = new Dictionary()
-//dct.set("game1", "name1")
-//dct.set("game2", "name2")
-//console.log(dct.map)
-//dct.remove("game1")
-//console.log(dct.showSelectedWord("game1"))
-//console.log(dct.map)
-//dct.showAllWords()
-//dct.showSelectedWord()
-//console.log(dct)
-//dct.remove("game1")
-//dct.showAllWords()
+
 module.exports = {
     fioToName,
     filterUnique,

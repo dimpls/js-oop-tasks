@@ -37,29 +37,20 @@ class Point3D extends Point {
  */
 class Queue {
     constructor(initArr = []) {
-        this.array = [];
-        this.size = initArr.length;
-        if(this.size !== 0){
-            for(let i = 0; i < this.size; ++i){
-                this.array[i] = initArr[i];
-            }
-        }
+        this.array = [...initArr];
     }
 
     push(value){
-        this.array[this.size] = value;
-        this.size += 1;
+        this.array.push(value)
     }
 
     pop(){
-        if(this.size > 0) {
+        if(this.array.length > 0) {
             let tmp = this.array[0]
-            this.array = this.array.slice(1, this.size)
-            this.size -= 1;
+            this.array = this.array.slice(1, this.array.length)
             return tmp;
         }
     }
-
 }
 
 module.exports = {
@@ -67,26 +58,3 @@ module.exports = {
     Point3D,
     Queue,
 };
-
-//let o = new Queue([1,2,3,4]);
-//console.log(o)
-//o.push(5);
-//console.log(o)
-//o.pop();
-//console.log(o)
-//o.pop();
-//console.log(o)
-//o.push(7);
-//console.log(o)
-//o.pop()
-//o.pop()
-//console.log(o)
-//o.pop()
-//o.pop()
-//o.pop()
-//console.log(o)
-//o.pop()
-//console.log(o)
-//o.pop()
-//o.pop()
-//console.log(o)
